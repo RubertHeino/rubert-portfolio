@@ -228,3 +228,106 @@ footer a:hover {
     font-size: 1.1rem;
   }
 }
+/* Sticky header */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* Left side: image + name + summary */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+.name-summary h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+.name-summary .summary {
+  margin: 2px 0 0 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Right side: navigation menu */
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li {
+  /* nothing special */
+}
+
+.header-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-nav ul li a:hover,
+.header-nav ul li a.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffd700; /* gold highlight */
+}
+
+/* Make sure body content is not hidden under fixed header */
+body {
+  padding-top: 70px; /* same as header height */
+  background: #f5f7fa; /* subtle light background */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive: stack menu on smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+  
+  .header-left {
+    margin-bottom: 10px;
+  }
+  
+  .header-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
